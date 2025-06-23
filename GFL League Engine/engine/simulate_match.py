@@ -2,24 +2,33 @@
 
 import random
 from engine.player_model import GFLPlayer
+import json
 
-# Simulated teams with real players
-def create_team(name):
-    positions = ["Attacker", "Midfield", "Defender", "Flex", "Specialist"]
-    return [GFLPlayer(f"{name[:2]}_{pos[:2]}_{i}", pos) for i, pos in enumerate(positions)]
+def create_team_from_json(team_name):
+    with open("data/team_rosters.json", "r") as f:
+        rosters = json.load(f)
+    team_data = rosters[team_name]
+    
+    players = []
+    for entry in team_data:
+        name_part, role_part = entry.rsplit("(", 1)
+        name = name_part.strip()
+        position = role_part.replace(")", "").strip()
+        players.append(GFLPlayer(name, position))
+    return players
 
-# Simulate one match with full player logic
+# Updated simulate_match() — use create_team_from_json
 def simulate_match(team1_name, team2_name):
     print(f"\n🕹 Simulating: {team1_name} vs. {team2_name}")
 
-    team1 = create_team(team1_name)
-    team2 = create_team(team2_name)
+    team1 = create_team_from_json(team1_name)
+    team2 = create_team_from_json(team2_name)
     score = {team1_name: 0, team2_name: 0}
     events = []
 
     for quarter in range(1, 5):
         print(f"\n🏀 Q{quarter} Begins")
-        for _ in range(6):  # 6 possessions per quarter
+        for _ in range(6):
             attacking_team = random.choice([(team1_name, team1), (team2_name, team2)])
             name, roster = attacking_team
             player = random.choice(roster)
@@ -44,20 +53,18 @@ def simulate_match(team1_name, team2_name):
                     "points": 0
                 })
 
-            # Random defensive play from opposing team
             defense_team = team1 if name == team2_name else team2
             defender = random.choice(defense_team)
             block_result = defender.simulate_defense()
             if block_result:
                 events.append({
                     "quarter": quarter,
-                    "team": defender.name,
+                    "team": team2_name if name == team1_name else team1_name,
                     "player": defender.name,
                     "description": block_result,
                     "points": 0
                 })
 
-    # Output summary
     print(f"\n🔚 Final Score: {team1_name} {score[team1_name]} – {team2_name} {score[team2_name]}")
     return {
         "score": score,
@@ -66,8 +73,8 @@ def simulate_match(team1_name, team2_name):
         "team2": team2
     }
 
-# Run simulation
+# Run match
 if __name__ == "__main__":
-    output = simulate_match("Rio Blaze", "Berlin Core")
-    for e in output["events"][:5]:
+    result = simulate_match("Rio Blaze", "Berlin Core")
+    for e in result["events"][:5]:
         print(f"Q{e['quarter']} | {e['team']} | {e['description']}")
