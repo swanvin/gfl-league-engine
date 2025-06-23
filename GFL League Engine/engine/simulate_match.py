@@ -73,8 +73,12 @@ def simulate_match(team1_name, team2_name):
         "team2": team2
     }
 
+import json
+
 # Run match
 if __name__ == "__main__":
     result = simulate_match("Rio Blaze", "Berlin Core")
-    for e in result["events"][:5]:
-        print(f"Q{e['quarter']} | {e['team']} | {e['description']}")
+
+    # Save full match log
+    with open("data/sample_match.json", "w") as f:
+        json.dump(result, f, indent=4)
