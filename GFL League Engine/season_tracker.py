@@ -65,4 +65,18 @@ season["matches"].append({
 with open(season_file, "w") as f:
     json.dump(season, f, indent=4)
 
-print(f"✅ Updated season stats. {winner} wins. MVP: {mvp}")
+print("\n✅ GFL Season Tracker Updated\n")
+
+print("🏆 Match Result:")
+print(f"• {team1:<12} {score1}")
+print(f"• {team2:<12} {score2}")
+print(f"• Winner: {winner}")
+print(f"• MVP: {mvp} ({mvp_counter[mvp]} impact points)\n")
+
+print("📈 Season Records:")
+for team in [winner, loser]:
+    rec = season["teams"][team]
+    print(f"• {team:<12} — W: {rec['wins']} | L: {rec['losses']} | PF: {rec['points_scored']} | PA: {rec['points_allowed']} | MVPs: {rec['mvp_awards']}")
+
+print(f"\n📂 Match Log Updated — {len(season['matches'])} total match{'es' if len(season['matches']) != 1 else ''} saved to season_stats.json")
+
