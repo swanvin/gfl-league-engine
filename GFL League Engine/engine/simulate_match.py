@@ -69,8 +69,6 @@ def simulate_match(team1_name, team2_name):
     return {
         "score": score,
         "events": events,
-        "team1": team1,
-        "team2": team2
     }
 
 import json
