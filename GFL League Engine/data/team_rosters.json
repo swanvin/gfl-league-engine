@@ -1,1 +1,58 @@
-# Placeholder for team_rosters.json
+{
+    "Rio Blaze": [
+        "Zion Blaze (Attacker)",
+        "Kael Storm (Midfield)",
+        "Rafi Santos (Defender)",
+        "Dante Cruz (Flex)",
+        "Nova Vela (Specialist)"
+    ],
+    "New York Halo": [
+        "Sloan Pierce (Attacker)",
+        "Jada Rivers (Midfield)",
+        "Arin Banks (Defender)",
+        "Leo Knox (Flex)",
+        "Sky Monroe (Specialist)"
+    ],
+    "Berlin Core": [
+        "Viktor Kraus (Attacker)",
+        "Emil Richter (Midfield)",
+        "Lena Weiss (Defender)",
+        "Timo Berg (Flex)",
+        "Mira Stahl (Specialist)"
+    ],
+    "Cairo Pulse": [
+        "Zain El-Amin (Attacker)",
+        "Mina Khoury (Midfield)",
+        "Omar Farouk (Defender)",
+        "Layla Nashar (Flex)",
+        "Hadiya Noor (Specialist)"
+    ],
+    "Tokyo Shifters": [
+        "Ren Kaito (Attacker)",
+        "Sora Yamato (Midfield)",
+        "Kai Ueno (Defender)",
+        "Aiko Shun (Flex)",
+        "Nari Takahashi (Specialist)"
+    ],
+    "Nairobi Stride": [
+        "Jabari Okoye (Attacker)",
+        "Zuri Kamau (Midfield)",
+        "Taye Abasi (Defender)",
+        "Nia Wekesa (Flex)",
+        "Amara Thimba (Specialist)"
+    ],
+    "Sydney Spectra": [
+        "Beau Quinn (Attacker)",
+        "Mila Harper (Midfield)",
+        "Asher Reid (Defender)",
+        "Finn Lowe (Flex)",
+        "Isla Nyx (Specialist)"
+    ],
+    "Seoul Tempest": [
+        "Joon Park (Attacker)",
+        "Min Seo (Midfield)",
+        "Hana Lim (Defender)",
+        "Taeyang Kim (Flex)",
+        "Yuri Shin (Specialist)"
+    ]
+}
