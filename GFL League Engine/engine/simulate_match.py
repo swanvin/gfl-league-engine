@@ -1,7 +1,7 @@
 # engine/simulate_match.py
 
 import random
-from player_model import GFLPlayer
+from engine.player_model import GFLPlayer
 import json
 
 def create_team_from_json(team_name):
