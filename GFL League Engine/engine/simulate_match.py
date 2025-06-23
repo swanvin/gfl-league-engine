@@ -5,7 +5,7 @@ from player_model import GFLPlayer
 import json
 
 def create_team_from_json(team_name):
-    with open("data/team_rosters.json", "r") as f:
+    with open("..data/team_rosters.json", "r") as f:
         rosters = json.load(f)
     team_data = rosters[team_name]
     
@@ -80,5 +80,5 @@ if __name__ == "__main__":
     result = simulate_match("Rio Blaze", "Berlin Core")
 
     # Save full match log
-    with open("data/sample_match.json", "w") as f:
+    with open("..data/sample_match.json", "w") as f:
         json.dump(result, f, indent=4)
