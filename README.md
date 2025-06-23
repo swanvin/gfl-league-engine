@@ -40,7 +40,7 @@ Game Master Mode is GFL’s custom simulation system that includes:
 - Shot clock system, zone fouls, scoring arcs
 - Balanced team roles: Attacker / Mid / Defender / Specialist
 
-📁 Rulebook: [`docs/rules.md`](docs/rules.md) *(to be added)*
+📁 [View Full Rulebook →](rules/rules.md)
 
 ---
 
